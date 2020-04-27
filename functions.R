@@ -10,7 +10,7 @@ sim_out<-function(n_start,avg_offspring,avg_mortality,generations){
     
     pop[i]<-(pop[i-1]-avg_mortality)*avg_offspring
     
-    if (pop[i]<0) pop[i]<-0
+    if (pop[i]<=0) break
   }
   
   tibble(pop_size=pop) %>%
